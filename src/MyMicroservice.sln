@@ -1,0 +1,38 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F509F25F-91F4-4D6D-BA1B-3376DADFA918}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{879955D3-27F5-4266-B9D7-920340CB562A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Customer", "Customer", "{9DD25B05-B3B9-4083-82F9-26878B404D4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.API", "Services\Customer\Customer.API\Customer.API.csproj", "{ADE1305D-FC52-4C6C-A686-0943CBB7A18F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ordering", "Ordering", "{FBB1244F-C156-4888-9161-1C692F78A367}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.API", "Services\Ordering\Ordering.API\Ordering.API.csproj", "{8A5E4A27-ECC5-4000-AC82-27F386E02585}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADE1305D-FC52-4C6C-A686-0943CBB7A18F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADE1305D-FC52-4C6C-A686-0943CBB7A18F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADE1305D-FC52-4C6C-A686-0943CBB7A18F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADE1305D-FC52-4C6C-A686-0943CBB7A18F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A5E4A27-ECC5-4000-AC82-27F386E02585}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A5E4A27-ECC5-4000-AC82-27F386E02585}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A5E4A27-ECC5-4000-AC82-27F386E02585}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A5E4A27-ECC5-4000-AC82-27F386E02585}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{879955D3-27F5-4266-B9D7-920340CB562A} = {F509F25F-91F4-4D6D-BA1B-3376DADFA918}
+		{9DD25B05-B3B9-4083-82F9-26878B404D4D} = {879955D3-27F5-4266-B9D7-920340CB562A}
+		{ADE1305D-FC52-4C6C-A686-0943CBB7A18F} = {9DD25B05-B3B9-4083-82F9-26878B404D4D}
+		{FBB1244F-C156-4888-9161-1C692F78A367} = {879955D3-27F5-4266-B9D7-920340CB562A}
+		{8A5E4A27-ECC5-4000-AC82-27F386E02585} = {FBB1244F-C156-4888-9161-1C692F78A367}
+	EndGlobalSection
+EndGlobal
