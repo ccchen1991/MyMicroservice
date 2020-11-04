@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Customers.Domain.Entities
+namespace Customer.Domain.Entities
 {
     public partial class Customer
     {

@@ -1,8 +1,7 @@
-﻿using Customers.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace Customers.Data.Database
+namespace Customer.Data.Database
 {
     public class CustomerContext : DbContext
     {
@@ -12,7 +11,7 @@ namespace Customers.Data.Database
         {
             var customers = new[]
             {
-                new Customer
+                new Domain.Entities.Customer
                 {
                     Id = Guid.Parse("9f35b48d-cb87-4783-bfdb-21e36012930a"),
                     FirstName = "Wolfgang",
@@ -20,7 +19,7 @@ namespace Customers.Data.Database
                     Birthday = new DateTime(1989, 11, 23),
                     Age = 30
                 },
-                new Customer
+                new Domain.Entities.Customer
                 {
                     Id = Guid.Parse("654b7573-9501-436a-ad36-94c5696ac28f"),
                     FirstName = "Darth",
@@ -28,7 +27,7 @@ namespace Customers.Data.Database
                     Birthday = new DateTime(1977, 05, 25),
                     Age = 43
                 },
-                new Customer
+                new Domain.Entities.Customer
                 {
                     Id = Guid.Parse("971316e1-4966-4426-b1ea-a36c9dde1066"),
                     FirstName = "Son",
@@ -42,7 +41,7 @@ namespace Customers.Data.Database
             SaveChanges();
         }
 
-        public DbSet<Customer> Customer { get; set; }
+        public DbSet<Domain.Entities.Customer> Customer { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -52,7 +51,7 @@ namespace Customers.Data.Database
         {
             modelBuilder.HasAnnotation("ProductVersion", "2.2.6-servicing-10079");
 
-            modelBuilder.Entity<Customer>(entity =>
+            modelBuilder.Entity<Domain.Entities.Customer>(entity =>
             {
                 entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
 
