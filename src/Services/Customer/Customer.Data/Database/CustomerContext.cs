@@ -5,6 +5,8 @@ namespace Customer.Data.Database
 {
     public class CustomerContext : DbContext
     {
+        public DbSet<Domain.Entities.Customer> Customer { get; set; }
+
         public CustomerContext() { }
 
         public CustomerContext(DbContextOptions<CustomerContext> options) : base(options)
@@ -40,8 +42,6 @@ namespace Customer.Data.Database
             Customer.AddRange(customers);
             SaveChanges();
         }
-
-        public DbSet<Domain.Entities.Customer> Customer { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
