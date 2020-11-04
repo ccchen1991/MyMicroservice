@@ -14,19 +14,56 @@ namespace Customer.Data.Repository
             CustomerContext = customerContext;
         }
 
-        public Task<TEntity> AddAsync(TEntity entity)
-        {
-            throw new NotImplementedException();
-        }
-
         public IEnumerable<TEntity> GetAll()
         {
-            throw new NotImplementedException();
+            try
+            {
+                return CustomerContext.Set<TEntity>();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Couldn't retrieve entities: {ex.Message}");
+            }
         }
 
-        public Task<TEntity> UpdateAsync(TEntity entity)
+        public async Task<TEntity> AddAsync(TEntity entity)
         {
-            throw new NotImplementedException();
+            if (entity == null)
+            {
+                throw new ArgumentNullException($"{nameof(AddAsync)} entity must not be null");
+            }
+
+            try
+            {
+                await CustomerContext.AddAsync(entity);
+                await CustomerContext.SaveChangesAsync();
+
+                return entity;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"{nameof(entity)} could not be saved: {ex.Message}");
+            }
+        }
+
+        public async Task<TEntity> UpdateAsync(TEntity entity)
+        {
+            if (entity == null)
+            {
+                throw new ArgumentNullException($"{nameof(AddAsync)} entity must not be null");
+            }
+
+            try
+            {
+                CustomerContext.Update(entity);
+                await CustomerContext.SaveChangesAsync();
+
+                return entity;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"{nameof(entity)} could not be updated {ex.Message}");
+            }
         }
     }
 }
